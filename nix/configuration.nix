@@ -1,23 +1,11 @@
 { config, pkgs, ... }:
 
 let
-  pkgs-new = pkgs // {
-    neovim = pkgs.neovim.overrideAttrs (oldAttrs: {
-      version = "0.10.0";
-      src = pkgs.fetchFromGitHub {
-        owner = "neovim";
-        repo = "neovim";
-        rev = "v0.10.0";
-        sha256 = "FCOipXHkAbkuFw9JjEpOIJ8BkyMkjkI0Dp+SzZ4yZlw=";
-      };
-    });
-  };
-
   home-manager = builtins.fetchTarball {
     url = "https://github.com/nix-community/home-manager/archive/master.tar.gz";
   };
     
-  nix-config = pkgs-new.fetchgit {
+  nix-config = pkgs.fetchgit {
     url = "https://github.com/victorIto07/nix-config";
     sha256 = "J24q+KWt6uipAXmbFpUv2PahTreZFOZHdc1bRW+pmlA=";
   };
@@ -29,6 +17,20 @@ in
       ./hardware-configuration.nix
       "${home-manager}/nixos"
     ];
+
+  nixpkgs.overlays = [
+    (self: super: {
+      neovim = super.neovim.overrideAttrs (oldAttrs: {
+        version = "0.10.0";
+        src = super.fetchFromGitHub {
+          owner = "neovim";
+          repo = "neovim";
+          rev = "v0.10.0";
+          sha256 = "0a7qa2vvl9h7k8m438m1x9blm7nsdch9akc4cnksb8hf9dca4bip";
+        };
+      });
+    })
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -99,14 +101,14 @@ in
      isNormalUser = true;
      description = "vitu";
      extraGroups = [ "networkmanager" "wheel" ];
-     packages = with pkgs-new; [ ];
+     packages = with pkgs; [ ];
    };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs-new; [
+  environment.systemPackages = with pkgs; [
     firefox
     neovim
     wezterm
@@ -132,7 +134,7 @@ in
     wget
   ];
 
-  home-manager.users.vitu = { pkgs-new, ... } : {
+  home-manager.users.vitu = { pkgs, ... } : {
     home.stateVersion = "24.05";
 
     home.file.".config/nvim".source = "${nix-config}/neovim";
