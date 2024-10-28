@@ -8,7 +8,6 @@ let
         owner = "neovim";
         repo = "neovim";
         rev = "v0.10.0";
-        sha256 = "+qjjelYMB3MyjaESfCaGoeBURUzSVh/50uxUqStxIfY=";
       };
     });
   };
@@ -19,6 +18,7 @@ let
     
   nix-config = pkgs-new.fetchgit {
     url = "https://github.com/victorIto07/nix-config";
+    sha256 = "J24q+KWt6uipAXmbFpUv2PahTreZFOZHdc1bRW+pmlA=";
   };
 
 in
