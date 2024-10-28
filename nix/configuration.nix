@@ -8,6 +8,7 @@ let
         owner = "neovim";
         repo = "neovim";
         rev = "v0.10.0";
+        sha256 = "FCOipXHkAbkuFw9JjEpOIJ8BkyMkjkI0Dp+SzZ4yZlw=";
       };
     });
   };
