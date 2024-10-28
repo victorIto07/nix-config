@@ -17,7 +17,7 @@ let
     url = "https://github.com/nix-community/home-manager/archive/master.tar.gz";
   };
     
-  nix-config = pkgs.fetchgit {
+  nix-config = pkgs-new.fetchgit {
     url = "https://github.com/victorIto07/nix-config";
     rev="main";
     sha256 = "ou11n3pndCBTnnYZuYyPWabpeROUP9Che6NrrEX3AoM=";
@@ -131,7 +131,7 @@ in
     cmake
   ];
 
-  home-manager.users.vitu = { pkgs, ... } : {
+  home-manager.users.vitu = { pkgs-new, ... } : {
     home.stateVersion = "24.05";
 
     home.file.".config/nvim".source = "${nix-config}/neovim";
