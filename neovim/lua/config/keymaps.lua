@@ -1,0 +1,26 @@
+local hop = require("hop")
+
+-- REMOVE WINDOW RESIZES FOR TERMINAL BINDINGS
+vim.keymap.set("n", "<C-Up>", "<Nop>", {})
+vim.keymap.set("n", "<C-Right>", "<Nop>", {})
+vim.keymap.set("n", "<C-Down>", "<Nop>", {})
+vim.keymap.set("n", "<C-Left>", "<Nop>", {})
+
+-- REMOVE WINDOW RESIZES FOR TERMINAL BINDINGS
+vim.keymap.set("n", "<C-Up>", "<Nop>", {})
+vim.keymap.set("n", "<C-Right>", "<Nop>", {})
+vim.keymap.set("n", "<C-Down>", "<Nop>", {})
+vim.keymap.set("n", "<C-Left>", "<Nop>", {})
+
+-- SEARCH CHAR
+vim.keymap.set("", "<C-f>", function()
+  hop.hint_char1()
+end)
+
+-- GOTO LINE
+vim.keymap.set("", "<C-t>", function()
+  hop.hint_lines()
+end)
+
+vim.keymap.set("n", "<C-i>", "<cmd>tabprevious<cr>")
+vim.keymap.set("n", "<C-o>", "<cmd>tabnext<cr>")
