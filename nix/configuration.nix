@@ -3,11 +3,11 @@
 let
   pkgs-new = pkgs // {
     neovim = pkgs.neovim.overrideAttrs (oldAttrs: {
-      version = "0.10.2";
+      version = "0.10.0";
       src = pkgs.fetchFromGitHub {
         owner = "neovim";
         repo = "neovim";
-        rev = "v0.10.2";
+        rev = "v0.10.0";
         sha256 = "+qjjelYMB3MyjaESfCaGoeBURUzSVh/50uxUqStxIfY=";
       };
     });
@@ -128,6 +128,8 @@ in
     nodenv
     clang
     cmake
+    fd
+    wget
   ];
 
   home-manager.users.vitu = { pkgs-new, ... } : {
