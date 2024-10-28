@@ -20,7 +20,6 @@ let
   nix-config = pkgs-new.fetchgit {
     url = "https://github.com/victorIto07/nix-config";
     rev="main";
-    sha256 = "ou11n3pndCBTnnYZuYyPWabpeROUP9Che6NrrEX3AoM=";
   };
 
 in
