@@ -1,16 +1,6 @@
+-- LANGUAGE LIST FOR AUTOMATION
+
 local hop = require("hop")
-
--- REMOVE WINDOW RESIZES FOR TERMINAL BINDINGS
-vim.keymap.set("n", "<C-Up>", "<Nop>", {})
-vim.keymap.set("n", "<C-Right>", "<Nop>", {})
-vim.keymap.set("n", "<C-Down>", "<Nop>", {})
-vim.keymap.set("n", "<C-Left>", "<Nop>", {})
-
--- REMOVE WINDOW RESIZES FOR TERMINAL BINDINGS
-vim.keymap.set("n", "<C-Up>", "<Nop>", {})
-vim.keymap.set("n", "<C-Right>", "<Nop>", {})
-vim.keymap.set("n", "<C-Down>", "<Nop>", {})
-vim.keymap.set("n", "<C-Left>", "<Nop>", {})
 
 -- SEARCH CHAR
 vim.keymap.set("", "<C-f>", function()

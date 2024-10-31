@@ -5,7 +5,7 @@ return {
   init = function()
     vim.g.mkdp_filetypes = { "markdown" }
     -- vim.g.mkdp_browser = "chrome"
-    vim.g.mkdp_markdown_css = "~/.config/nvim/assets/css/markdown-preview.css"
+    vim.g.mkdp_markdown_css = "/Users/victo/env-config/neovim/assets/css/markdown-preview.css"
     vim.g.mkdp_theme = "light"
   end,
   keys = {

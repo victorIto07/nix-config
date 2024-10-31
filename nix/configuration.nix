@@ -18,7 +18,7 @@ in
       "${home-manager}/nixos"
     ];
 
-  nixpkgs.overlays = [
+  pkgs.overlays = [
     (self: super: {
       neovim = super.neovim.overrideAttrs (oldAttrs: {
         version = "0.10.0";
@@ -38,7 +38,7 @@ in
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "vitu"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;

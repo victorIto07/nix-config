@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 
-local accent_color = "#884bff"
+local accent_color = "#4e55ab"
 
 config.front_end = "OpenGL"
 config.max_fps = 60
@@ -13,7 +13,7 @@ config.cursor_blink_rate = 10
 config.term = "xterm-256color"
 
 config.cell_width = 0.9
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.90
 config.prefer_egl = true
 
 config.font_size = 12.0
@@ -157,6 +157,12 @@ config.window_background_gradient = {
 		"#0c0b17",
 	},
 	-- noise = 50,
+}
+
+config.colors = {
+	tab_bar = {
+		background = "rgba(0,0,0,0)",
+	},
 }
 
 ---@diagnostic disable-next-line: unused-local

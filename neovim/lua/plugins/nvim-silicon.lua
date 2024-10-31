@@ -13,8 +13,7 @@ return {
       theme = "Dracula",
 
       -- STILL TESTING
-      -- background = "#41295a",
-      background_image = "~/.config/nvim/assets/bg-silicon/gradient-gray.png",
+      background = "#41295a",
       shadow_blur_radius = 16,
       shadow_offset_x = 8,
       shadow_offset_y = 8,
