@@ -5,12 +5,12 @@ local config = wezterm.config_builder()
 
 local accent_color = "#4e55ab"
 
-config.front_end = "OpenGL"
-config.max_fps = 60
-config.default_cursor_style = "BlinkingBlock"
-config.animation_fps = 1
-config.cursor_blink_rate = 10
-config.term = "xterm-256color"
+-- config.front_end = "OpenGL"
+-- config.max_fps = 60
+-- config.default_cursor_style = "BlinkingBlock"
+-- config.animation_fps = 1
+-- config.cursor_blink_rate = 10
+-- config.term = "xterm-256color"
 
 config.cell_width = 0.9
 config.window_background_opacity = 0.90
