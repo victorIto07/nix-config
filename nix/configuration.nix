@@ -113,23 +113,24 @@ in
     neovim
     wezterm
     git
+    gh
+    python312
+    bun
+    zig
+    go
+    nodejs_22
     libgcc
     rustup
     ripgrep
     silicon
     yarn
-    pyenv
     gnused
     fzf
     lazygit
     zoxide
     jq
     yazi
-    bun
-    go
-    nodenv
     clang
-    cmake
     fd
     wget
   ];
